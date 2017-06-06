@@ -55,7 +55,6 @@ exports.index = function (req, res, next) {
     if (search) {
         var search_like = "%" + search.replace(/ +/g,"%") + "%";
 
-<<<<<<< HEAD
         countOptions.where.question = { $like: search_like };
     }
 
@@ -63,9 +62,9 @@ exports.index = function (req, res, next) {
     if (req.user) {
         countOptions.where.AuthorId = req.user.id;
         title = "Preguntas de " + req.user.username;
-=======
+
         countOptions.where = {question: { like: search_like }};
->>>>>>> practica52
+
     }
 
     models.Quiz.count(countOptions)
@@ -275,7 +274,7 @@ exports.randomplay = function (req, res, next) {
 
 };
 
-// GEt /quizzes/randomcheck
+// GET /quizzes/randomcheck
 exports.randomcheck = function (req, res, next) {
     var answer = req.query.answer || "";
     var result = answer.toLowerCase().trim() === req.quiz.answer.toLowerCase().trim();
