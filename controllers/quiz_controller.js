@@ -7,11 +7,7 @@ var paginate = require('../helpers/paginate').paginate;
 exports.load = function (req, res, next, quizId) {
 
     models.Quiz.findById(quizId, {
-        include: [
-            models.Tip,
-            {model: models.User, as: 'Author'}
-        ]
-    })
+        include: [models.Tip]})
     .then(function (quiz) {
         if (quiz) {
             req.quiz = quiz;

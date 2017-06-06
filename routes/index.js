@@ -131,6 +131,8 @@ router.delete('/quizzes/:quizId(\\d+)/tips/:tipId(\\d+)',
     sessionController.loginRequired,
     tipController.destroy);
 
+router.post('/quizzes/_quizId(\\d+)/tips', tipController.create);
+
 router.get('/quizzes',                     quizController.index);
 router.get('/quizzes/:quizId(\\d+)',       quizController.show);
 router.get('/quizzes/new',                 quizController.new);
