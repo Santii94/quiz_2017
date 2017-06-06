@@ -117,7 +117,7 @@ exports.index = function (req, res, next) {
         for (var i in error.errors) {
             req.flash('error', error.errors[i].value);
         }
-	res.render('quizzes/show', {quiz: req.quiz});
+	res.render('quizzes/show', {quiz: quiz});
     }).catch(function (error) {
         req.flash('error', 'Error al mostrar un Quiz: ' + error.message);
         next(error);
@@ -234,7 +234,7 @@ exports.play = function (req, res, next) {
         for (var i in error.errors) {
             req.flash('error', error.errors[i].value);
         }
-        res.render('quizzes/play', {quiz: req.quiz});
+        res.render('quizzes/play', {quiz: quiz});
     }).catch(function (error) {
         req.flash('error', 'Error al crear un Quiz: ' + error.message);
         next(error);
