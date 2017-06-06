@@ -106,6 +106,7 @@ exports.index = function (req, res, next) {
        		 res.render('quizzes/show', {
           	 quiz: req.quiz,
            	 users: users
+	});
         }).catch(function (error) {
         req.flash('error', 'Error al mostrar un Quiz: ' + error.message);
         next(error);
@@ -215,6 +216,7 @@ exports.play = function (req, res, next) {
             quiz: req.quiz,
             answer: answer,
             users: users
+	});
 	 }).catch(function (error) {
         req.flash('error', 'Error al crear un Quiz: ' + error.message);
         next(error);
