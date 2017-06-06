@@ -31,8 +31,8 @@ sequelize.sync().then(function() {
   Quiz.count().then(function(count) {
     if(count === 0) {
       Quiz.create({
-        question: 'Capital de Francia',
-        answer: 'Paris'
+        question: 'Capital de Italia',
+        answer: 'Roma'
       }).then(function() {
         console.log('Quizzes table initialized with data');
       });
