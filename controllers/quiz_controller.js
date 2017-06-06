@@ -102,17 +102,17 @@ exports.index = function (req, res, next) {
 };
 
 
-// GET /quizzes/:quizId
-exports.show = function (req, res, next) {
+ // GET /quizzes/:quizId
+ exports.show = function (req, res, next) {
 
     models.User.findAll()
     	.then(function(users) {
-       		res.render('quizzes/show', {
-          		quiz: req.quiz,
-           		users: users
+       		 res.render('quizzes/show', {
+          	 quiz: req.quiz,
+           	 users: users
         });
-    })
-};
+    });
+ };
 
 
 // GET /quizzes/new
@@ -217,7 +217,8 @@ exports.play = function (req, res, next) {
             quiz: req.quiz,
             answer: answer,
             users: users
-        });
+	 });
+     });
 };
 
 
