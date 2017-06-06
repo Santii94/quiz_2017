@@ -35,4 +35,9 @@ router.get('/help', function(req, res, next) {
     res.render('help');
 });
 
+//Randomplay
+
+router.get('/quizzes/randomplay',  quizController.randomplay);
+router.get('/quizzes/randomcheck/:quizId(\\d+)',  quizController.randomcheck);
+
 module.exports = router;
