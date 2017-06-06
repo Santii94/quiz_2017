@@ -242,7 +242,7 @@ exports.randomcheck = function (req, res, next) {
     var result = answer.toLowerCase().trim() === req.quiz.answer.toLowerCase().trim();
     if(result){
         req.session.randomplay.resolved.push(parseInt(req.quiz.id));
-    
+    }
 
     res.render('quizzes/random_result', {
         score: req.session.randomplay.resolved.length,
@@ -250,16 +250,6 @@ exports.randomcheck = function (req, res, next) {
         answer: answer,
         result: result
    
-    });}
-	  if(!result){
-         
-	res.render('quizzes/random_result', {
-        score: req.session.randomplay.resolved =0,
-        quizId: req.quiz.id,
-        answer: answer,
-        result: result
- });
-}
-
+    });
 
 };
