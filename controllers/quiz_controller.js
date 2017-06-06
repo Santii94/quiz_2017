@@ -251,14 +251,7 @@ exports.randomcheck = function (req, res, next) {
         result: result
    
     });}
-	  if(!result){
-         
-	res.render('quizzes/random_result', {
-        score: req.session.randomplay.resolved = [],
-        quizId: req.quiz.id,
-        answer: answer,
-        result: result
- });
+
 }
 
 };
