@@ -107,7 +107,16 @@ exports.index = function (req, res, next) {
           	 quiz: req.quiz,
            	 users: users
 	});
-        }).catch(function (error) {
+        })
+	.catch(Sequelize.ValidationError, function (error) {
+
+        req.flash('error', 'Errores en el formulario:');
+        for (var i in error.errors) {
+            req.flash('error', error.errors[i].value);
+        }
+
+        res.render('quizzes/show', {quiz: quiz});
+    	}).catch(function (error) {
         req.flash('error', 'Error al mostrar un Quiz: ' + error.message);
         next(error);
     });
@@ -217,7 +226,16 @@ exports.play = function (req, res, next) {
             answer: answer,
             users: users
 	});
-	 }).catch(function (error) {
+	 })
+	.catch(Sequelize.ValidationError, function (error) {
+
+        req.flash('error', 'Errores en el formulario:');
+        for (var i in error.errors) {
+            req.flash('error', error.errors[i].value);
+        }
+
+        res.render('quizzes/play', {quiz: quiz});
+    	}).catch(function (error) {
         req.flash('error', 'Error al crear un Quiz: ' + error.message);
         next(error);
      });
