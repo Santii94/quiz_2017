@@ -37,11 +37,26 @@ sequelize.sync().then(function() {
     if(count === 0) {
       Quiz.create({
         question: 'Capital de Italia',
-        answer: 'Roma',
+        answer: 'Roma'
+      })
+      Quiz.create({
 	question: 'Capital de España',
         answer: 'Madrid'
       }).then(function() {
         console.log('Quizzes table initialized with data');
+      });
+    }
+  })
+  User.count().then(function(count) {
+    if(count === 0) {
+      User.create({
+	username: 'admin',
+        password: encryptPassword('1234', 'aaaa'),
+        salt: 'aaaa',
+        isAdmin: true,
+        createdAt: new Date(), updatedAt: new Date()
+      }).then(function() {
+        console.log('Users table initialized with data');
       });
     }
   })
