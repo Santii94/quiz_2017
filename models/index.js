@@ -49,9 +49,7 @@ sequelize.sync().then(function() {
   })
 });
 sequelize.sync().then(function() {
-  User.count().then(function(count) {
-    if(count === 0) {
-      User.create({
+    User.create({
 	username: 'admin',
         password: encryptPassword('1234', 'aaaa'),
         salt: 'aaaa',
@@ -60,8 +58,6 @@ sequelize.sync().then(function() {
       }).then(function() {
         console.log('Users table initialized with data');
       });
-    }
-  })
 });
 
 // Relaciones entre modelos
