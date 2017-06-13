@@ -13,7 +13,7 @@
             <li>
                 <%= tip.text %> <small><span id="autor">(by <%=tip.Author.username%>)</span></small>
 
-                <% if (!accepted && (isAdmin || isQuizAuthor || isTipAuthor)) { %>
+                <% if (!accepted && (isAdmin || isQuizAuthor)) { %>
 
                       <a href="/quizzes/<%= quizId %>/tips/<%= tip.id %>/accept?_method=PUT">
                           <button>Aceptar</button>
