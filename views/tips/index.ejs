@@ -10,7 +10,7 @@
         <% if (accepted || isAdmin || isQuizAuthor) { %>
 
             <li>
-                <%= tip.text %>
+                <%= tip.text %> hola <span id="autor"><%tipAuthorId%></span> 
 
                 <% if (!accepted && (isAdmin || isQuizAuthor)) { %>
 
