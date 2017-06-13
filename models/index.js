@@ -55,11 +55,6 @@ sequelize.sync().then(function() {
     }
   })
 });
-sequelize.sync().then(function() {
-   .then(function() {
-        console.log('Users table initialized with data');
-      });
-});
 
 // Relaciones entre modelos
 Tip.belongsTo(Quiz);
