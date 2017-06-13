@@ -5,7 +5,7 @@ module.exports = {
         return queryInterface.addColumn(
             'Tips',
             'AuthorId',
-            {type: Sequelize.INTEGER}
+            {type: Sequelize.STRING}
         );
     },
 
