@@ -38,11 +38,9 @@ sequelize.sync().then(function() {
       Quiz.create({
         question: 'Capital de Italia',
         answer: 'Roma'
-      })
-      Quiz.create({
-	question: 'Capital de España',
-        answer: 'Madrid'
-      })
+      }).then(function() {
+        console.log('Quizzes table initialized with data');
+      });
     }
   })
 });
