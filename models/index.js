@@ -47,6 +47,8 @@ sequelize.sync().then(function() {
       });
     }
   })
+});
+sequelize.sync().then(function() {
   User.count().then(function(count) {
     if(count === 0) {
       User.create({
