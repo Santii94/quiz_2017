@@ -43,15 +43,6 @@ sequelize.sync().then(function() {
 	question: 'Capital de España',
         answer: 'Madrid'
       })
- 	User.create({
-	username: 'admin',
-        password: encryptPassword('1234', 'aaaa'),
-        salt: 'aaaa',
-        isAdmin: true,
-        createdAt: new Date(), updatedAt: new Date()
-      }).then(function() {
-        console.log('Quizzes table initialized with data');
-      });
     }
   })
 });
