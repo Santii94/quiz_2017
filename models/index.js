@@ -32,19 +32,7 @@ var Tip = sequelize.import(path.join(__dirname,'tip'));
 // Importar la definicion de la tabla Users de user.js
 var User = sequelize.import(path.join(__dirname,'user'));
 
-// Create and initiate table
-sequelize.sync().then(function() {
-  Quiz.count().then(function(count) {
-    if(count === 0) {
-      Quiz.create({
-        question: 'Capital de Italia',
-        answer: 'Roma'
-      }).then(function() {
-        console.log('Quizzes table initialized with data');
-      });
-    }
-  })
-});
+
 
 // Relaciones entre modelos
 Tip.belongsTo(Quiz);
